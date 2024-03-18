@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="bootstrapDatepicker.css">
+
+  <script src="https://kit.fontawesome.com/4ee6212fba.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="bootstrapDatepicker.css" />
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
+
+  <style>
+    #anasayfa {
+      display: flex;
+      border: solid;
+      border-radius: 20px;
+      height: 600px;
+      width: 900px;
+    }
+
+    .solkolon {
+
+      height: 600px;
+      width: 60px;
+    }
+
+    .solikonlargoz {
+
+      height: 40px;
+      width: 45px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .solikonlar {
+      height: 30px;
+      width: 30px;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .solikonlar:hover {
+      background-color: #acdef1;
+    }
+
+    .solikonlargoz #goz {
+      font-size: 35px;
+    }
+
+    .solikonlarcikis {
+      height: 30px;
+      width: 30px;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 250px;
+      cursor: pointer;
+    }
+
+    .ortakolon {
+      display: block;
+      width: 600px;
+      height: 590px;
+      background-color: rgb(242, 242, 242);
+    }
+
+    .ortabir {
+      height: 50px;
+      width: 500px;
+
+      display: flex;
+      align-items: center;
+    }
+
+    .ortabirsag {
+      height: 30px;
+      width: 110px;
+      margin-right: 10px;
+      margin-left: auto;
+    }
+
+    .ortabirsag #acilirliste {
+      width: 110px;
+      height: 30px;
+      color: grey;
+      font-size: 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .ortabirsol {
+      font-size: 20px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    .ortaiki {
+      height: 150px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .ortaiki .kutucuklar {
+      border: solid white;
+      border-radius: 10px;
+      border-width: 4px;
+      background-color: rgb(242, 242, 242);
+      height: 140px;
+      width: 120px;
+      cursor: pointer;
+    }
+
+    .ortaiki .kutucuklar:hover {
+      background-color: white;
+    }
+
+    .kutucuklar .takipci {
+      font-size: 30px;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: left;
+      margin-left: 10px;
+    }
+
+    .kutucuklar .followers {
+      color: gray;
+      font-size: 10px;
+      margin-left: 10px;
+      text-align: left;
+    }
+
+    .fa-twitter,
+    .fa-instagram,
+    .fa-youtube,
+    .fa-facebook-f {
+      display: flex;
+      font-size: 25px;
+      margin-left: 15px;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      margin-right: auto;
+    }
+
+    .ucnokta {
+      width: 20px;
+      height: 15px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      margin-left: auto;
+      margin-right: 5px;
+    }
+
+    .ortauc {
+      border-radius: 20px;
+      height: 180px;
+      background-color: white;
+      width: 500px;
+      margin-top: 10px;
+    }
+
+    .ortadort {
+      display: flex;
+      height: 200px;
+      margin-top: 10px;
+      width: 500px;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .ortadort .ortadortkutular1 {
+      background-color: white;
+      border-radius: 20px;
+      height: 180px;
+      width: 250px;
+    }
+
+    .ortadort .ortadortkutular {
+      border-radius: 20px;
+      background-color: #65588a;
+      height: 180px;
+      width: 120px;
+      color: white;
+    }
+    .ortadortspan{
+        margin-right: auto;
+        margin-left: 10px;
+
+    }
+
+    .sagkolon {
+      width: 235px;
+    }
+
+    .sagbir {
+
+      display: flex;
+      height: 50px;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .sagbirsol {
+      font-size: 20px;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+
+    .sagbirorta {
+      display: flex;
+      border-radius: 10px;
+      background-color: rgb(247, 225, 237);
+      width: 200px;
+      height: 30px;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .sagbirsag {
+      font-size: 20px;
+      margin-right: 20px;
+      margin-left: auto;
+      cursor: pointer;
+    }
+
+    .sagbirortayazi {
+      font-size: 10px;
+    }
+
+    .sagiki {
+      margin-left: 0px;
+      margin-right: auto;
+      
+      height: 150px;
+      width: 200px;
+    }
+
+    .saguc {
+
+      justify-items: center;
+    }
+
+    .datepicker {
+      margin-left: 10px;
+    }
+
+    .sagdort {
+      height: 150px;
+
+    }
+
+    .sagdortkutu {
+      display: flex;
+      border-radius: 10px;
+      border: solid;
+      border-color: rgb(240, 236, 236);
+      height: 60px;
+      margin: 10px;
+      align-items: center;
+    }
+    .sagdortyazi{
+      margin-left: 5px;
+    }
+    .sagdortprofil{
+      display: flex;
+      margin-left: auto;
+      margin-right: 1px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="anasayfa">
+    <div class="solkolon">
+      <center>
+        <div class="solikonlargoz">
+          <i id="goz" class="fa-solid fa-eye"></i>
+        </div>
+        <hr>
+        <div class="solikonlar"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="solikonlar">
+          <i class="fa-solid fa-satellite-dish"></i>
+        </div>
+        <div class="solikonlar"><i class="fa-solid fa-calendar"></i></div>
+        <div class="solikonlar"><i class="fa-solid fa-sliders"></i></div>
+        <div class="solikonlar"><i class="fa-regular fa-comments"></i></div>
+        <div class="solikonlarcikis">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </div>
+      </center>
+    </div>
+    <div class="ortakolon">
+      <center>
+        <div class="ortabir">
+          <div class="ortabirsol">
+            <i class="fa-solid fa-table-list"></i>
+            <i class="fa-solid fa-bars" style="color: #b9b9b5"></i>
+          </div>
+
+          <div class="ortabirsag">
+            <select id="acilirliste">
+              <option>LAST 15 DAYS</option>
+              <option>LAST 30 DAYS</option>
+            </select>
+          </div>
+        </div>
+        <div class="ortaiki">
+          <div class="kutucuklar">
+            <i class="fa-brands fa-twitter" style="color: #74c0fc"></i>
+            <div class="takipci">280k</div>
+            <div class="followers">Followers</div>
+            <div class="ucnokta"><i class="fa-solid fa-ellipsis"></i></div>
+          </div>
+          <div style="background-color: white;" class="kutucuklar">
+            <i class="fa-brands fa-instagram" style="color: #b197fc"></i>
+            <div class="takipci">680k</div>
+            <div class="followers">Followers</div>
+            <div class="ucnokta"><i class="fa-solid fa-ellipsis"></i></div>
+          </div>
+          <div class="kutucuklar">
+            <i class="fa-brands fa-youtube" style="color: #f70202"></i>
+            <div class="takipci">2.3M</div>
+            <div class="followers">Followers</div>
+            <div class="ucnokta"><i class="fa-solid fa-ellipsis"></i></div>
+          </div>
+          <div class="kutucuklar">
+            <i class="fa-brands fa-facebook-f" style="color: #175acf"></i>
+            <div class="takipci">50k</div>
+            <div class="followers">Followers</div>
+            <div class="ucnokta"><i class="fa-solid fa-ellipsis"></i></div>
+          </div>
+        </div>
+        <div class="ortauc">
+          <canvas id="myChart" width="450" height="200"></canvas>
+        </div>
+        <div class="ortadort">
+          <div class="ortadortkutular1">
+            <h5><b>Key Metrics</b></h5>
+           <span class="ortadortspan">Clicks</span><span>10k</span>
+           
+           <span>Clicks</span><span>10k</span>
+           <hr>
+           <span>Clicks</span><span>10k</span>
+           <hr>
+           
+
+          </div>
+          <div class="ortadortkutular">
+            <div><h5>Engaged Users</h5></div>
+            <div><h1>12.2k</h1></div>
+            <div>
+                
+                <i class="fa-solid fa-angles-left fa-rotate-90" style="color: #6ec65d;"></i>
+                <span>%19</span>
+            </div>
+          </div>
+          <div class="ortadortkutular">
+            <div><h5>Page <br>Impressions</h5></div>
+            <div><h1>8.6k</h1></div>
+            <div>
+                <i class="fa-solid fa-angles-left fa-rotate-270" style="color: #e40c0c;"></i>
+                <span>%9</span>
+            </div>
+          </div>
+        </div>
+
+      </center>
+    </div>
+    <div class="sagkolon">
+      <div class="sagbir">
+        <div class="sagbirsol"><i class="fa-regular fa-bell"></i></div>
+        <div class="sagbirorta">
+          <div style="font-size: 13px; margin: 10px" class="sagbirortaicon">
+            <i class="fa-solid fa-gift"></i>
+          </div>
+          <div class="sagbirortayazi">2 NEW UPDATES</div>
+        </div>
+        <div class="sagbirsag"><i class="fa-regular fa-user"></i></div>
+      </div>
+      <div class="sagiki"><img src="file:///C:/Users/PC/Desktop/odev4/a.png" height="150px" style="margin-left: 10px;" ></div>
+      <div class="saguc">
+        <div class="datepicker"></div>
+
+        <script>
+          $(".datepicker").datepicker();
+        </script>
+      </div>
+      <div class="sagdort">
+        <div class="sagdortkutu">
+          <div id="sagdortyazi">Say hi to <b>Laith Hart</b></div>
+          <div id="profil"> <img src="file:///C:/Users/PC/Desktop/odev4/goblin-svgrepo-com.svg" height="30px"></div>
+
+        </div>
+        <div class="sagdortkutu">
+          <div id="sagdortyazi">Say hi to <b>Sidney Dyer</b></div>
+          <div id="sagdortprofil"> <img src="file:///C:/Users/PC/Desktop/odev4/landlady-svgrepo-com.svg" height="30px"></div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <script>
+    // Sahte veriler
+    var ay = ["January", "February", "March", "April", "May", "June", "July"];
+    var gain = [10, 60, 70, 50, 60, 10, 60];
+    var lost = [-10, -30, -20, -40, -5, -20, -50];
+
+    // Grafik oluşturma
+    var ctx = document.getElementById("myChart").getContext("2d");
+    var myChart = new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: ay,
+        datasets: [
+          {
+            label: "Gain",
+            data: gain,
+            backgroundColor: "rgba(205 0 0)",
+            borderColor: "rgba(205 0 0)",
+            borderWidth: 1,
+          },
+          {
+            label: "Lost",
+            data: lost,
+            backgroundColor: "rgba(255 222 102)",
+            borderColor: "rgba(255 222 102)",
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: "Instagram Subscribers",
+            font: {
+              size: 8,
+            },
+          },
+        },
+      },
+    });
+  </script>
+</body>
+
+</html>
